@@ -1,0 +1,22 @@
+package templates
+
+import "github.com/tarro-dev/discord-oauth/internal/user"
+
+templ Index(user *user.User) {
+	<!DOCTYPE html>
+	<html>
+		<head>
+			@head()
+		</head>
+		<body>
+			@index(user)
+		</body>
+	</html>
+}
+
+templ index(user *user.User) {
+    <div class="min-h-screen bg-gray-900">
+        @navbar(user)
+    </div>
+	
+}

@@ -1,0 +1,24 @@
+package templates
+
+import "github.com/tarro-dev/discord-oauth/internal/user"
+
+templ ProfilePage(user *user.User) {
+	<!DOCTYPE html>
+	<html>
+		<head>
+			@head()
+		</head>
+		<body>
+			@profilePage(user)
+		</body>
+	</html>
+}
+
+templ profilePage(user *user.User) {
+	<div class="min-h-screen bg-gray-900 text-white">
+        @navbar(user)
+		<h1>name: { user.Name } </h1>
+		<h1>ID: { user.ID } </h1>
+		<h1>Avatar: { user.Avatar } </h1>
+	</div>
+}
